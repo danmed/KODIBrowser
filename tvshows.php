@@ -53,6 +53,7 @@ $poster_path = "posters/" . $imdb . "-3.jpg";
 Else
 {
 $xml = "https://thetvdb.com/api/" . $tvdbkey . "/series/" . $imdb;
+    print $xml;
 $xmlStr = file_get_contents($xmlUrl);
 $xmlvar=simplexml_load_string($xmlStr);
     $poster = $xmlvar->poster;
