@@ -55,10 +55,10 @@ $json=file_get_contents("https://thetvdb.com/api/" . $tvdbkey . "/series/" . $im
 $info=json_decode($json, TRUE);
 $poster = $info['poster'];
 $poster_path = " http://www.thetvdb.com/banners/posters/" . $poster;
-file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
+file_put_contents("posters/" . $imdb . "-3.jpg", fopen($poster_path, 'r'));
 }
 }
-print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . ".jpg' alt='" . $title . " - " . $imdb ."'/></a>";
+print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='posters/" . $imdb . "-3.jpg' alt='" . $title . " - " . $imdb ."'/></a>";
 }
 mysql_close($db_handle);
 }
