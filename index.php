@@ -3,12 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <title> Kodi Browser </title>
-    <link rel="stylesheet" title="Standard" href="styles.css" type="text/css" media="screen" />
-
-    <script language="JavaScript" type="text/javascript" src="contentflow_src.js"></script>
-    <script tyle="text/javascript">
-        var cf = new ContentFlow('contentFlow', {startItem: "start", reflectionColor: "#000000", maxItemHeight: "180", visibleItems: 5, circularFlow: 0, reflectionHeight: 0.55});
-    </script>
 </head>
 <body>
 <center>
