@@ -55,7 +55,7 @@ $json=file_get_contents("https://thetvdb.com/api/" . $tvdbkey . "/series/" . $im
 $info=json_decode($json, TRUE);
 $poster = $info['poster'];
 $poster_path = " http://www.thetvdb.com/banners/" . $poster;
-file_put_contents("posters/" . $imdb . "-3.jpg", fopen($poster_path, 'r'));
+file_put_contents($poster, fopen($poster_path, 'r'));
 }
 }
 print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb ."'/></a>";
