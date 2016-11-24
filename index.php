@@ -51,7 +51,7 @@ while ( $db_field = mysql_fetch_assoc($result) ) {
 $imdb = $db_field['uniqueid_value'];
 $title = $db_field['c00'];
 
-if (empty($db_field['uniqueid_value')) { 
+if (empty($imdb)) { 
 $imdb = "blank";
 }
     Else
@@ -68,7 +68,7 @@ $poster_path = "http://image.tmdb.org/t/p/w92/" . $poster;
 file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
 }
 }
-print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . "'/></a>";
+print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb ."'/></a>";
 
 }
 
