@@ -48,7 +48,7 @@ $result = mysql_query($SQL);
 
 while ( $db_field = mysql_fetch_assoc($result) ) {
 
-$imdb = $db_field['c09'];
+$imdb = $db_field['uniqueid_value'];
 $title = $db_field['c00'];
 
 if (file_exists("posters/" . $imdb . ".jpg")) {
