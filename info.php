@@ -23,7 +23,7 @@ $movietitle = $db_field['c00'];
 $movietitle2 = "'" . $db_field['c00'] . "'";
 $moviedescription = $db_field['c02'] . $db_field['c01'];
 $moviemoto = $db_field['c03'];
-$imdbrating = "<img src='" . substr($db_field['c05'], 0, 1) . ".png'> - " . substr($db_field['c05'], 0, 3) ."/10";
+$imdbrating = "<img src='" . substr($db_field['rating'], 0, 1) . ".png'> - " . substr($db_field['rating'], 0, 3) ."/10";
 $director = $db_field['c06'];
 $year = $db_field['c07'];
 $year2 = "'" . $db_field['c07'] . "'";
