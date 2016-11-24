@@ -27,7 +27,7 @@ $SQL = "select * from movie_view where c00 like '%" . $searchstring ."%' ORDER B
 }
 elseif ($tag == "year")
 {
-$SQL = "select * from movie_view where c07 like '%" . $searchstring ."%' ORDER BY RAND() LIMIT 30
+$SQL = "select * from movie_view where premiered like '%" . $searchstring ."%' ORDER BY RAND() LIMIT 30
 ";
 }
 elseif ($tag == "rate")
