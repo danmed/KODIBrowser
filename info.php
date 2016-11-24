@@ -36,7 +36,7 @@ $filename = $db_field['strFileName'];
 $location = $db_field['strPath'];
 
 $SQL2 = "select * from streamdetails where idFile = '" . $idfile . "'";
-$result2 = mysql_query($SQL);
+$result2 = mysql_query($SQL2);
 
 while ( $db_field = mysql_fetch_assoc($result2) ) 
 {
