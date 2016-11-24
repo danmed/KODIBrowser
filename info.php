@@ -35,15 +35,6 @@ $studio = $db_field['c18'];
 $filename = $db_field['strFileName'];
 $location = $db_field['strPath'];
 
-$SQL2 = "select * from streamdetails where idFile = '" . $idfile . "'";
-$result2 = mysql_query($SQL2);
-
-while ( $db_field = mysql_fetch_assoc($result2) ) 
-{
-$codec = $db_field['strVideoCodec'];
-}
-	
-	
 $imdb = $db_field['uniqueid_value'];
 if (file_exists("fanart/" . $imdb . ".jpg")) {
 $fanart_path = "fanart/" . $imdb . ".jpg";
@@ -57,6 +48,14 @@ $fanart_path = "http://image.tmdb.org/t/p/original/" . $fanart;
 file_put_contents("fanart/" . $imdb . ".jpg", fopen($fanart_path, 'r'));
 }
 
+$SQL2 = "select * from streamdetails where idFile = '" . $idfile . "'";
+$result2 = mysql_query($SQL2);
+
+while ( $db_field = mysql_fetch_assoc($result2) ) 
+{
+$codec = $db_field['strVideoCodec'];
+}
+	
 $resolution = explode('[',$filename);
 $resolution1 = explode(']',$resolution[1]);
 $finalres = substr($resolution1[0], 5);
