@@ -22,7 +22,7 @@ $moviemoto = $db_field['c03'];
 $imdbrating = "<img src='" . substr($db_field['rating'], 0, 1) . ".png'> - " . substr($db_field['rating'], 0, 3) ."/10";
 $director = $db_field['c06'];
 $year = $db_field['c07'];
-$year2 = "'" . $db_field['c07'] . "'";
+$year2 = "'" . $db_field['c05'] . "'";
 $rating = $db_field['c12'];
 $genre = $db_field['c14'];
 $trailer = $db_field['c19'];
