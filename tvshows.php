@@ -51,14 +51,14 @@ $poster_path = "posters/" . $imdb . ".jpg";
 }
 Else
 {
-$json=file_get_contents("https://api.themoviedb.org/3/movie/" . $imdb . "?api_key=" . $apikey);
+$json=file_get_contents("https://thetvdb.com/api/" . $tvdbkey . "/series/" . $imdb);
 $info=json_decode($json, TRUE);
-$poster = $info['poster_path'];
-$poster_path = "http://image.tmdb.org/t/p/w92/" . $poster;
+$poster = $info['poster'];
+$poster_path = " http://www.thetvdb.com/banners/posters/" . $poster;
 file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
 }
 }
-print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb ."'/></a>";
+print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='posters/" . $imdb . ".jpg' alt='" . $title . " - " . $imdb ."'/></a>";
 }
 mysql_close($db_handle);
 }
