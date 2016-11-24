@@ -63,7 +63,7 @@ $poster_path = "http://image.tmdb.org/t/p/w92/" . $poster;
 file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
 }
 
-print "<div class='item' href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "'/><div class='caption'>" . $title . "</div></div>";
+print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "'/>" . $title . "</a>";
 
 }
 
