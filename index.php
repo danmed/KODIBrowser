@@ -51,6 +51,11 @@ while ( $db_field = mysql_fetch_assoc($result) ) {
 $imdb = $db_field['uniqueid_value'];
 $title = $db_field['c00'];
 
+if $imdb == "" { 
+$imdb = "blank.jpg";
+}
+    Else
+    {
 if (file_exists("posters/" . $imdb . ".jpg")) {
 $poster_path = "posters/" . $imdb . ".jpg";
 }
@@ -62,7 +67,7 @@ $poster = $info['poster_path'];
 $poster_path = "http://image.tmdb.org/t/p/w92/" . $poster;
 file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
 }
-
+}
 print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . "'/></a>";
 
 }
