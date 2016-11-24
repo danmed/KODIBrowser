@@ -34,13 +34,13 @@ $poster_path = "posters/blank.jpg";
 }
     Else
     {
-if (file_exists("posters/" . $imdb . "-1.jpg")) {
-$poster_path = "posters/" . $imdb . "-1.jpg";
+if (file_exists("posters/" . $imdb . "-3.jpg")) {
+$poster_path = "posters/" . $imdb . "-3.jpg";
 }
 Else
 {
 $poster = "http://www.thetvdb.com.rsz.io/banners/posters/" . $imdb . "-1.jpg?width=90";
-$poster_path = "posters/" . $imdb . "-1.jpg";
+$poster_path = "posters/" . $imdb . "-3.jpg";
 file_put_contents($poster_path, fopen($poster, 'r'));
 }
 }
