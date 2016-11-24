@@ -2,7 +2,7 @@
 
 # MYSQL information
 $server 	= 	'192.168.1.100';
-$database 	= 	"myvideo107";
+$database 	= 	"myvideos107";
 $username 	= 	'kodi';
 $password 	= 	'kodi';
 
