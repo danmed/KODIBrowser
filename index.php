@@ -52,7 +52,7 @@ $imdb = $db_field['uniqueid_value'];
 $title = $db_field['c00'];
 
 if (empty($imdb)) { 
-$imdb = "blank";
+$poster_path = "posters/blank.jpg";
 }
     Else
     {
