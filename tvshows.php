@@ -11,6 +11,29 @@
 </font><br><br>
 <?PHP
 include "config.inc.php";
+    function objectsIntoArray($arrObjData, $arrSkipIndices = array())
+{
+    $arrData = array();
+
+    // if input is object, convert into array
+    if (is_object($arrObjData)) {
+        $arrObjData = get_object_vars($arrObjData);
+    }
+
+    if (is_array($arrObjData)) {
+        foreach ($arrObjData as $index => $value) {
+            if (is_object($value) || is_array($value)) {
+                $value = objectsIntoArray($value, $arrSkipIndices); // recursive call
+            }
+            if (in_array($index, $arrSkipIndices)) {
+                continue;
+            }
+            $arrData[$index] = $value;
+        }
+    }
+    return $arrData;
+}
+?>
 $searchstring = $_GET["search"];
 $tag = $_GET["tag"];
 $db_handle = mysql_connect($server, $username, $password);
@@ -51,8 +74,10 @@ $poster_path = "posters/" . $imdb . "-3.jpg";
 }
 Else
 {
-$xml = new SimpleXMLElement(file_get_contents("https://thetvdb.com/api/" . $tvdbkey . "/series/" . $imdb));
-$poster = $xml->code->poster;
+$xml = "https://thetvdb.com/api/" . $tvdbkey . "/series/" . $imdb;
+$xmlStr = file_get_contents($xmlUrl);
+$xmlvar=simplexml_load_string($xmlStr);
+    $poster = $xmlvar->poster;
 $poster_path = " http://www.thetvdb.com/banners/" . $poster;
 file_put_contents($poster, fopen($poster_path, 'r'));
 }
