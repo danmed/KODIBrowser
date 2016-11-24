@@ -10,7 +10,7 @@ $db_handle = mysql_connect($server, $username, $password);
 $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) 
 {
-$SQL = "select * from tvshows_view where idshow = '" . $movieid . "'";
+$SQL = "select * from tvshow_view where idshow = '" . $movieid . "'";
 $result = mysql_query($SQL);
 while ( $db_field = mysql_fetch_assoc($result) ) 
 {
