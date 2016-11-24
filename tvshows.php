@@ -47,7 +47,7 @@ $poster_path = "posters/blank.jpg";
     Else
     {
 if (file_exists("posters/" . $imdb . "-3.jpg")) {
-$poster_path = "posters/" . $imdb . ".-3jpg";
+$poster_path = "posters/" . $imdb . "-3.jpg";
 }
 Else
 {
