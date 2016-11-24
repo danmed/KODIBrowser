@@ -52,7 +52,7 @@ $poster_path = "posters/" . $imdb . "-3.jpg";
 }
 Else
 {
-$poster_path = " http://www.thetvdb.com/banners/posters" . $imdb . "-1.jpg";
+$poster_path = " http://www.thetvdb.com/banners/posters/" . $imdb . "-1.jpg";
 file_put_contents($poster, fopen($poster_path, 'r'));
 }
 }
