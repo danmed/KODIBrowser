@@ -51,7 +51,7 @@ while ( $db_field = mysql_fetch_assoc($result) ) {
 $imdb = $db_field['uniqueid_value'];
 $title = $db_field['c00'];
 
-if $imdb == "" { 
+if (empty($imdb)) { 
 $imdb = "blank.jpg";
 }
     Else
