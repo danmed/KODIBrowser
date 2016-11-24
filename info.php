@@ -34,7 +34,7 @@ $studio = $db_field['c18'];
 $filename = $db_field['strFileName'];
 $location = $db_field['strPath'];
 
-$imdb = $db_field['c09'];
+$imdb = $db_field['uniqueid_value'];
 if (file_exists("fanart/" . $imdb . ".jpg")) {
 $fanart_path = "fanart/" . $imdb . ".jpg";
 }
