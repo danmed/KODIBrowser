@@ -30,16 +30,13 @@ $studio = $db_field['c18'];
 $filename = $db_field['strFileName'];
 $location = $db_field['strPath'];
 $imdb = $db_field['uniqueid_value'];
-if (file_exists("fanart/" . $imdb . ".jpg")) {
-$fanart_path = "fanart/" . $imdb . ".jpg";
+if (file_exists("fanart/" . $imdb . "-1.jpg")) {
+$fanart_path = "fanart/" . $imdb . "-1.jpg";
 }
 Else
 {
-$json=file_get_contents("https://api.themoviedb.org/3/movie/" . $imdb . "?api_key=" . $apikey);
-$info=json_decode($json, TRUE);
-$fanart = $info['backdrop_path'];
-$fanart_path = "http://image.tmdb.org/t/p/original/" . $fanart;
-file_put_contents("fanart/" . $imdb . ".jpg", fopen($fanart_path, 'r'));
+$fanart_path = "https://thetvdb.com/banners/fanart/original/" .$imdb. "-1.jpg";
+file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
 }
 $SQL2 = "select * from streamdetails where idFile = '" . $idfile . "' AND iStreamType = '0'";
 $result2 = mysql_query($SQL2);
