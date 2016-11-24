@@ -23,10 +23,10 @@ $imdbrating = "<img src='" . substr($db_field['rating'], 0, 1) . ".png'> - " . s
 $director = $db_field['c06'];
 $year = substr($db_field['c05'], 0, 4);
 $year2 = "'" . $year . "'";
-$rating = $db_field['c12'];
-$genre = $db_field['c14'];
+$rating = $db_field['c13'];
+$channel = $db_field['c14'];
 $trailer = $db_field['c19'];
-$studio = $db_field['c18'];
+$studio = $db_field['c14'];
 $filename = $db_field['strFileName'];
 $location = $db_field['strPath'];
 $imdb = $db_field['uniqueid_value'];
@@ -99,7 +99,7 @@ background-size: cover;
 <?PHP
 print "<br><br><font face='arial' color='white'><center><table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'><tr><td colspan='2'><font face='arial' color='#0066FF' size='6'><b><A href='http://www.imdb.com/title/" . $imdb . "'>" . $movietitle . "</a></b></font><font face='arial' color='white'> - " . $year . "</td></tr><tr><td width='446px'>";
 new MovieTrailer(@$movietitle2, @$year2); 
-print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Director:</b><br>" . $director ."<br><b>Genre:</b><br>" . $genre ."<br><b>Rating:</b><br>" . $rating ."<br><b>Resolution</b><br>" . $finalres . "<br><b>Codec</b><br>" . $codec . "<br><b>IMDB Rating:</b><br>" . $imdbrating ."<br><b>Play Movie</b><br><a href='http://" . $xbmc2 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc2label. "</a> | <a href='http://" . $xbmc1 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc1label. "</a></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $moviedescription . "</td></tr><tr><td><font face='arial' color='white'><b>Tag Line:</b><br>" . $moviemoto . " </td></tr>";
+print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Director:</b><br>" . $director ."<br><b>Channel:</b><br>" . $channel ."<br><b>Rating:</b><br>" . $rating ."<br><b>Resolution</b><br>" . $finalres . "<br><b>Codec</b><br>" . $codec . "<br><b>IMDB Rating:</b><br>" . $imdbrating ."<br><b>Play Movie</b><br><a href='http://" . $xbmc2 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc2label. "</a> | <a href='http://" . $xbmc1 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc1label. "</a></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $moviedescription . "</td></tr><tr><td><font face='arial' color='white'><b>Tag Line:</b><br>" . $moviemoto . " </td></tr>";
 }
 mysql_close($db_handle);
 }
