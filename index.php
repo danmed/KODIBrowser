@@ -14,13 +14,6 @@
 <center>
 <font face="arial" size="15">KODI BROWSER</font>
 </font><br><br>
-    <!-- ===== FLOW ===== -->
-<div height="250">
-    <div id="contentFlow" class="ContentFlow">
-        <!-- should be place before flow so that contained images will be loaded first -->
-        <div class="loadIndicator"><div class="indicator"></div></div>
-
-        <div class="flow">
 <?PHP
 include "config.inc.php";
 $searchstring = $_GET["search"];
@@ -84,11 +77,7 @@ print "Database NOT Found ";
 ?>
             
 
-        </div>
-        <div class="globalCaption"></div>
-        <div class="scrollbar">
-            <div class="slider"><div class="position"></div></div>
-        </div>
+        
 
     </div>
 </div>
