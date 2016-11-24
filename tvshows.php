@@ -51,7 +51,7 @@ $poster_path = "posters/" . $imdb . "-3.jpg";
 }
 Else
 {
-$xml = new SimpleXMLElement(file_get_contents("https://thetvdb.com/api/" . $tvdbkey . "/series/" . $imdb);
+$xml = new SimpleXMLElement(file_get_contents("https://thetvdb.com/api/" . $tvdbkey . "/series/" . $imdb));
 $poster = $xml->code->poster;
 $poster_path = " http://www.thetvdb.com/banners/" . $poster;
 file_put_contents($poster, fopen($poster_path, 'r'));
