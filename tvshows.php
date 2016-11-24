@@ -53,7 +53,7 @@ $poster_path = "posters/" . $imdb . "-1.jpg";
 Else
 {
 $poster = "http://www.thetvdb.com.rsz.io/banners/posters/" . $imdb . "-1.jpg?width=90";
-$poster_path = "posters/" . $imdb . "-1.jpg";
+$poster_path = "/posters/" . $imdb . "-1.jpg";
 file_put_contents($poster, fopen($poster_path, 'r'));
 }
 }
