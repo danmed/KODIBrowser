@@ -51,9 +51,9 @@ file_put_contents("fanart/" . $imdb . ".jpg", fopen($fanart_path, 'r'));
 $SQL2 = "select * from streamdetails where idFile = '" . $idfile . "'";
 $result2 = mysql_query($SQL2);
 
-while ( $db_field = mysql_fetch_assoc($result2) ) 
+while ( $db_field2 = mysql_fetch_assoc($result2) ) 
 {
-$codec = $db_field['strVideoCodec'];
+$codec = $db_field2['strVideoCodec'];
 }
 	
 $resolution = explode('[',$filename);
