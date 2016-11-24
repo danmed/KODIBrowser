@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <title> Kodi Browser </title>
+        <link rel="stylesheet" title="Standard" href="styles.css" type="text/css" media="screen" />
 </head>
 <body>
 <center>
