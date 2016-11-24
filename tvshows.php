@@ -44,7 +44,7 @@ $poster_path = "posters/" . $imdb . "-1.jpg";
 file_put_contents($poster_path, fopen($poster, 'r'));
 }
 }
-print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb ."'/></a>";
+print "<a href='tvinfo.php?search=" . $db_field['idShow'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb ."'/></a>";
 }
 mysql_close($db_handle);
 }
