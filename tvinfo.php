@@ -12,13 +12,12 @@ if ($db_found)
 {
 $SQL = "select * from tvshow_view where idshow = '" . $movieid . "'";
 $SQL2 = "select * from episode_view where idshow = '" . $movieid . "'";
-	while ($row = mysql_fetch_array($SQL2)) {
+$result = mysql_query($SQL);
+$result2 = mysql_query($SQL2);
+	while ($row = mysql_fetch_array($result2)) {
 		$episodelist = $episodelist . "<option value='".$row['c00']."'>".$row['c00']."</option>";
 	}
 	
-print $episodelist;
-$result = mysql_query($SQL);
-$result2 = mysql_query($SQL2);
 $episode_count = mysql_num_rows($result2);
 while ( $db_field = mysql_fetch_assoc($result) ) 
 {
