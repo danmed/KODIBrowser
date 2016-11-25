@@ -6,7 +6,7 @@ MySQL
 
 For Krypton (DB Version 107) MySQL installs ONLY!
 
-Point config.inc.php to your MySQL database
+Point config.inc.php to your MySQL database and put in your tmdb and tvdb API keys
 
 Index.php - returns last 30 entries added to DB
 TVshows.php - returns last 30 entries added to DB
