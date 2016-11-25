@@ -34,7 +34,7 @@ $poster_path = "posters/blank.jpg";
 }
     Else
     {
-if (file_exists("posters/" . $imdb . "-3.jpg")) {
+if (file_exists("posters/" . $imdb . "-3.jpg") && filesize("posters/" . $imdb . "-3.jpg")  > 0) {
 $poster_path = "posters/" . $imdb . "-3.jpg";
 }
 Else
@@ -42,6 +42,9 @@ Else
 $poster = "http://www.thetvdb.com.rsz.io/banners/posters/" . $imdb . "-1.jpg?width=90";
 $poster_path = "posters/" . $imdb . "-3.jpg";
 file_put_contents($poster_path, fopen($poster, 'r'));
+If (filesize("posters/" . $imdb . "-3.jpg")  < 1) {
+$poster_path = "posters/blank.jpg";
+}
 }
 }
 print "<a href='tvinfo.php?search=" . $db_field['idShow'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb ."'/></a>";
