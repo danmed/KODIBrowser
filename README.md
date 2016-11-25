@@ -1,15 +1,21 @@
 # KODIBrowser
 
 Description : 
+
 Allows the browser of Movies and TVShows via the Kodi MySQL database.
+
 Play movie on desired Kodi front end (not working for TV yet)
+
 Watch trailers
 
 Coming Soon :
+
 Individual Episode Browsing
 
 Prereqs : 
+
 PHP5
+
 MySQL
 
 For Krypton (DB Version 107) MySQL installs ONLY!
