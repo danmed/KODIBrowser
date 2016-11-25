@@ -12,9 +12,9 @@ if ($db_found)
 {
 $SQL = "select * from tvshow_view where idshow = '" . $movieid . "'";
 $SQL2 = "select * from episode_view where idshow = '" . $movieid . "'";
-	/* while ($row = mysql_fetch_array($SQL2)) {
+	while ($row = mysql_fetch_array($SQL2)) {
 		$episodelist = $episodelist . "<option value='".$row['c00']."'>".$row['c00']."</option>";
-	} */
+	}
 $result = mysql_query($SQL);
 $result2 = mysql_query($SQL2);
 $episode_count = mysql_num_rows($result2);
