@@ -7,7 +7,13 @@
 </head>
 <body>
 <center>
-<font face="arial" size="15">KODI BROWSER</font>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+    <tr>
+        <td width=33%></td>
+        <td width=33%><font face="arial" size="15">KODI BROWSER</font></td>
+        <Td align=right width=33%><a href="tvshows.php"><img src="images/tvshows.png" border="0"></a></td>
+    </tr>
+</table>
 </font><br><br>
 <?PHP
 include "config.inc.php";
