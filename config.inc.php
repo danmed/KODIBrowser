@@ -7,10 +7,10 @@ $username 	= 	'kodi';
 $password 	= 	'kodi';
 
 # API key from tmdb.com
-$apikey 	= 	'd0c4af9405af9c13c26e76760839bdfd';
+$apikey 	= 	'';
 
 # API key from tvdb.com
-$tvdbkey  =   '78135D1673A5BB8D';
+$tvdbkey  =   '';
 
 # Internal IP's for "frontroom" and "bedroom" XBMC instances including port numbers
 $xbmc1 		= 	"192.168.1.26:8080";
