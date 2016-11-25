@@ -88,7 +88,7 @@ $result = mysql_query($SQL);
 
 while ( $db_field = mysql_fetch_assoc($result) ) {
 
-$imdb = $db_field['c09'];
+$imdb = $db_field['uniqueid_value'];
 
 $json=file_get_contents("https://api.themoviedb.org/3/movie/" . $imdb . "?api_key=" . $apikey);
 $info=json_decode($json, TRUE);
