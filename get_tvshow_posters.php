@@ -80,11 +80,9 @@ $SQL = "select * from movie_view Order By c00 Asc";
 $result = mysql_query($SQL);
 while ( $db_field = mysql_fetch_assoc($result) ) {
 $imdb = $db_field['uniqueid_value'];
-$json=file_get_contents("https://api.themoviedb.org/3/movie/" . $imdb . "?api_key=" . $apikey);
-$info=json_decode($json, TRUE);
-$poster = $info['poster_path'];
-$poster_path = "http://image.tmdb.org/t/p/w92/" . $poster;
-file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
+$poster = "http://www.thetvdb.com.rsz.io/banners/posters/" . $imdb . "-1.jpg?width=90";
+$poster_path = "posters/" . $imdb . "-3.jpg";
+file_put_contents($poster_path, fopen($poster, 'r'));
 }
 mysql_close($db_handle);
 }
