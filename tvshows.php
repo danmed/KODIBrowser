@@ -9,9 +9,9 @@
 <center>
 <table border=0 cellpadding=0 cellspacing=0 width=100%>
     <tr>
-        <td></td>
-        <td><font face="arial" size="15">KODI BROWSER</font></td>
-        <Td align=right><a href="index.php"><img src="movies.png" border="0"></a></td>
+        <td width=33%></td>
+        <td width=33%><font face="arial" size="15">KODI BROWSER</font></td>
+        <Td align=right width=33%><a href="index.php"><img src="images/movies.png" border="0"></a></td>
     </tr>
 </table>
 </font><br><br>
