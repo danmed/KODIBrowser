@@ -50,6 +50,7 @@ $resolution1 = explode(']',$resolution[1]);
 $finalres = substr($resolution1[0], 5);
 ?>
 <head>
+	<title><?PHP print $movietitle; ?> </title>
 <style>
 .alpha60 {
 /* Fallback for web browsers that doesn't support RGBa */
