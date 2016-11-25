@@ -11,7 +11,7 @@
     <tr>
         <td width=33%></td>
         <td width=33%><font face="arial" size="15">KODI BROWSER</font></td>
-        <Td align=right width=33%><a href="tvshows.php"><img src="images/tvshows.png" border="0"></a></td>
+        <Td align=right width=33%><a href="tvshows.php"><img src="images/tvshows.png" border="0" width="30"></a></td>
     </tr>
 </table>
 </font><br><br>
