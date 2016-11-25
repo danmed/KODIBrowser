@@ -11,7 +11,7 @@ $db_found = mysql_select_db($database, $db_handle);
 if ($db_found) 
 {
 $SQL = "select * from tvshow_view where idshow = '" . $movieid . "'";
-$SQL2 = "select * from episode_view where idshow = '" . $movieid . "'";
+$SQL2 = "select * from episode_view where idshow = '" . $movieid . "' ORDER BY c12, c13";
 $result = mysql_query($SQL);
 $result2 = mysql_query($SQL2);
 	while ($row = mysql_fetch_array($result2)) {
