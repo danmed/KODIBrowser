@@ -72,6 +72,8 @@ border:1px solid #222;
 
 <body bgcolor="black">
 <?PHP
+    error_reporting(E_ALL);
+ini_set('display_errors', '1');
 include "config.inc.php";
 $db_handle = mysql_connect($server, $username, $password);
 $db_found = mysql_select_db($database, $db_handle);
