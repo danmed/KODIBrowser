@@ -15,7 +15,7 @@ $SQL2 = "select * from episode_view where idshow = '" . $movieid . "'";
 $result = mysql_query($SQL);
 $result2 = mysql_query($SQL2);
 	while ($row = mysql_fetch_array($result2)) {
-		$episodelist = $episodelist . "<option value='".$row['c00']."'>".$row['c00']."</option>";
+		$episodelist = $episodelist . "<option value='".$row['c00']."'>S".$row['c12']."E".$row['c15']."-".$row['c00']."</option>";
 	}
 	
 $episode_count = mysql_num_rows($result2);
