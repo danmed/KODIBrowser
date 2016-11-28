@@ -55,7 +55,7 @@ Else
 $fanart_path = "https://thetvdb.com/banners/fanart/original/" .$imdb. "-1.jpg";
 file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
 }
-$SQL4 = "select * from streamdetails where idFile = '" . $idfile . "' AND iStreamType = '0'";
+$SQL4 = "select * from streamdetails where idFile = '" . $episodeid . "' AND iStreamType = '0'";
 $result4 = mysql_query($SQL4);
 while ( $db_field4 = mysql_fetch_assoc($result4) ) 
 {
@@ -115,7 +115,7 @@ background-size: cover;
 	</script>
 	</head>
 <?PHP
-print "<br><br><font face='arial' color='white'><center><table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'><tr><td colspan='2'><font face='arial' color='#0066FF' size='6'><b><A href='http://thetvdb.com/?tab=series&id=" . $imdb . "'>" . $episodeid . "</a></b></font><font face='arial' color='white'> - " . $year . "</td></tr><tr><td width='446px'>";
+print "<br><br><font face='arial' color='white'><center><table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'><tr><td colspan='2'><font face='arial' color='#0066FF' size='6'><b><A href='http://thetvdb.com/?tab=series&id=" . $imdb . "'>" . $episodetitle . "</a></b></font><font face='arial' color='white'> - " . $year . "</td></tr><tr><td width='446px'>";
 new MovieTrailer(@$movietitle2, @$year2); 
 print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Channel:</b><br>" . $channel ."<br><b>Episodes:</b><br><select name='episodes'>" . $episodelist ."</select><br><b>Rating:</b><br>" . $rating ."<br><b>IMDB Rating:</b><br>" . $imdbrating ."<br><b>Play Show</b><br><a href='http://" . $xbmc2 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc2label. "</a> | <a href='http://" . $xbmc1 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc1label. "</a></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $episodedescription . "</td></tr><tr><td><font face='arial' color='white'><b>Tag Line:</b><br>" . $moviemoto . " </td></tr>";
 }
@@ -126,3 +126,4 @@ else
 print "Database NOT Found ";
 }
 ?>
+t
