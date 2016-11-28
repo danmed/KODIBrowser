@@ -13,17 +13,10 @@ $db_found  = mysql_select_db($database, $db_handle);
 if ($db_found) {
                 $SQL     = "select * from tvshow_view where idshow = '" . $showid . "'";
                 $SQL2    = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
-                $SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "'";
-  $result3  = mysql_query($SQL3); 
-  
-  if (!$result3) {
-    echo 'Could not run query: ' . mysql_error();
-    exit;
-}
-  
-                               $episode_info = mysql_fetch_row($result3); 
-                                $episodedescription = $episode_info['c01'];
-                                $episodetitle       = $episode_info['c00'];
+$SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "' LIMIT 1";
+$result  = mysql_query($SQL3);
+$episodedescription = mysql_result($result, 0, c01);
+$episodetitle = mysql_result($result,0, c00);
                                 
             
   $result  = mysql_query($SQL);
