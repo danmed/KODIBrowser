@@ -49,10 +49,10 @@ if ($db_found) {
                                                 file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
                                 }
                 $result3 = mysql_query($SQL3);
-                $episode_info =  mysql_fetch_row($result3); {
+                $episode_info =  mysql_fetch_row($result3); 
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
-                                                                   }
+                                                                   
                                 $resolution  = explode('[', $filename);
                                 $resolution1 = explode(']', $resolution[1]);
                                 $finalres    = substr($resolution1[0], 5);
