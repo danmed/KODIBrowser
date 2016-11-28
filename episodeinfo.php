@@ -14,7 +14,7 @@ if ($db_found) {
                 $SQL     = "select * from tvshow_view where idshow = '" . $showid . "'";
                 $SQL2    = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
                 $SQL3    = "select * from episode where idfile = '" . $episodeid . "'";
-                $SQL4    = "select * from streamdetails where idFile = '" . $episodeid . "' AND iStreamType = '0'";              
+    
             
   $result  = mysql_query($SQL);
                 $result2 = mysql_query($SQL2);
@@ -48,15 +48,10 @@ if ($db_found) {
                                                 file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
                                 }
                 $result3 = mysql_query($SQL3);
-                while ($db_field3 = mysql_fetch_assoc($result3)); {
-                                $episodedescription = $db_field3['c01'];
-                                $episodetitle       = $db_field3['c00'];
-                }
-                                $result4 = mysql_query($SQL4);
-                                while ($db_field4 = mysql_fetch_assoc($result4)) {
-                                                $codec = $db_field4['strVideoCodec'];
-                                }
-                                
+                while ($episode_info = mysql_fetch_assoc($result3)); {
+                                $episodedescription = $episode_info['c01'];
+                                $episodetitle       = $episode_info['c00'];
+                                                                   }
                                 $resolution  = explode('[', $filename);
                                 $resolution1 = explode(']', $resolution[1]);
                                 $finalres    = substr($resolution1[0], 5);
