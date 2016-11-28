@@ -11,7 +11,7 @@ $SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' A
                                $episode_info = mysql_fetch_assoc($result3); 
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
-print $SQL3
+print $SQL3;
 print $episodedescription;
 print $episodetitle;
 }
