@@ -14,17 +14,13 @@ if ($db_found) {
                 $SQL     = "select * from tvshow_view where idshow = '" . $showid . "'";
                 $SQL2    = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
                 $SQL3    = "select * from episode where idfile = '" . $episodeid . "'";
-                $result  = mysql_query($SQL);
+                $SQL4    = "select * from streamdetails where idFile = '" . $episodeid . "' AND iStreamType = '0'";              
+  print $sql3;              
+  $result  = mysql_query($SQL);
                 $result2 = mysql_query($SQL2);
                 while ($row = mysql_fetch_array($result2)) {
                                 $episodelist = $episodelist . "<option value='" . $row['idEpisode'] . "'>S" . $row['c12'] . "E" . $row['c13'] . "-" . $row['c00'] . "</option>";
                 }
-                $result3 = mysql_query($SQL3);
-                while ($db_field3 = mysql_fetch_assoc($result3)); {
-                                $episodedescription = $db_field3['c01'];
-                                $episodetitle       = $db_field3['c00'];
-                }
-                
                 
                 $episode_count = mysql_num_rows($result2);
                 while ($db_field = mysql_fetch_assoc($result)) {
@@ -51,7 +47,11 @@ if ($db_found) {
                                                 $fanart_path = "https://thetvdb.com/banners/fanart/original/" . $imdb . "-1.jpg";
                                                 file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
                                 }
-                                $SQL4    = "select * from streamdetails where idFile = '" . $episodeid . "' AND iStreamType = '0'";
+                $result3 = mysql_query($SQL3);
+                while ($db_field3 = mysql_fetch_assoc($result3)); {
+                                $episodedescription = $db_field3['c01'];
+                                $episodetitle       = $db_field3['c00'];
+                }
                                 $result4 = mysql_query($SQL4);
                                 while ($db_field4 = mysql_fetch_assoc($result4)) {
                                                 $codec = $db_field4['strVideoCodec'];
