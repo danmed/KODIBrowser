@@ -13,7 +13,7 @@ $db_found  = mysql_select_db($database, $db_handle);
 if ($db_found) {
                 $SQL     = "select * from tvshow_view where idshow = '" . $showid . "'";
                 $SQL2    = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
-                $SQL3    = "select * from episode where idfile = '" . $fileid . "'";
+                $SQL3    = "select * from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "'";
     
             
   $result  = mysql_query($SQL);
