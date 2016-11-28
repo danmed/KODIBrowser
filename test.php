@@ -14,6 +14,7 @@ $result  = mysql_query($SQL3);
                                 $episodetitle       = $db_field['c00'];
                                }
 print $SQL3;
+print mysql_num_rows($result);
 print $episodedescription;
 print $episodetitle;
 }
