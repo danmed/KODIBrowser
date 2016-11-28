@@ -1,4 +1,3 @@
-<html>
 <?PHP
 include "config.inc.php";
 $showid    = $_GET["show"];
