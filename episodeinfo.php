@@ -48,8 +48,8 @@ if ($db_found) {
                                                 $fanart_path = "https://thetvdb.com/banners/fanart/original/" . $imdb . "-1.jpg";
                                                 file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
                                 }
-                $result3 = mysql_query($SQL3);
-                $episode_info =  mysql_fetch_row($result3); 
+                                
+                                $episode_info =  mysql_fetch_row($SQL3); 
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
                                                                    
