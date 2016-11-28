@@ -2,24 +2,25 @@
 
 Description : 
 
-Allows the browser of Movies and TVShows via the Kodi MySQL database.
+Allows the browsing of Movies and TVShows via the Kodi MySQL database.
 
-Play movie on desired Kodi front end (not working for TV yet)
+# Features : 
+* Browse movies by Recently Added, Genre, Rating, Year, Name (All limited to 30 random results)
+* Play movie on desired Kodi front end (not working for TV yet)
+* Watch trailers
+* Browse TV Shows by name or Recently Added
+* Browse individual episodes
 
-Watch trailers
+# Coming Soon :
+* Play Episodes on Desired Kodi front end.
 
-Coming Soon :
+# Prereqs : 
+* PHP5
+* MySQL
+* For Krypton (DB Version 107) MySQL installs ONLY!
 
-Individual Episode Browsing
 
-Prereqs : 
-
-PHP5
-
-MySQL
-
-For Krypton (DB Version 107) MySQL installs ONLY!
-
+# Instructions
 Point config.inc.php to your MySQL database and put in your tmdb and tvdb API keys
 
 Index.php - returns last 30 entries added to DB
