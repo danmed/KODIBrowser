@@ -15,6 +15,7 @@ $SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' A
                                 $episodetitle       = $db_field['c00'];
                                }
 print $SQL3;
+  print $result;
 print $episodedescription;
 print $episodetitle;
 }
