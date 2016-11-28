@@ -7,7 +7,7 @@ function left($str, $length)
                 return substr($str, 0, $length);
 }
 $showid    = $_GET["show"];
-$fileid = $_GET["ep"];
+$episodeid = $_GET["ep"];
 $db_handle = mysql_connect($server, $username, $password);
 $db_found  = mysql_select_db($database, $db_handle);
 if ($db_found) {
