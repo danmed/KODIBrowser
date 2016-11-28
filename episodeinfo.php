@@ -15,7 +15,7 @@ if ($db_found) {
                 $SQL2    = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
                 $SQL3    = "select * from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "'";
   $result3  = mysql_query($SQL3) or die(mysql_error()); 
-                                while ($episode_info = mysql_fetch_assoc($result3)) { 
+                                while ($episode_info = mysql_fetch_row($result3)) { 
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
                                 }  
@@ -26,8 +26,8 @@ if ($db_found) {
                                 $episodelist = $episodelist . "<option value='" . $row['idEpisode'] . "'>S" . $row['c12'] . "E" . $row['c13'] . "-" . $row['c00'] . "</option>";
                 }
                 
-                $episode_count = mysql_num_rows($result2);
-  $checkresult = mysql_num_rows($result3);
+
+
                 while ($db_field = mysql_fetch_assoc($result)) {
                                 $idfile           = $db_field['idFile'];
                                 $movietitle       = $db_field['c00'];
