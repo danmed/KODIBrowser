@@ -11,7 +11,7 @@ $result  = mysql_query($SQL3);
                                 $value = mysql_result($result, i, 'c01;
                                 $episodedescription = $db_field['c01'];
                                 $episodetitle       = $db_field['c00'];
-                               }
+                               
 print "SQL : " . $SQL3 . "<br>";
 print "ROWs : " . mysql_num_rows($result) . "<br>";
 print "DESC : " . $episodedescription . "<br>";
