@@ -49,7 +49,7 @@ if ($db_found) {
                                                 file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
                                 }
                 $result3 = mysql_query($SQL3);
-                while ($episode_info = mysql_fetch_assoc($result3)); {
+                $episode_info =  mysql_fetch_row($result3); {
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
                                                                    }
