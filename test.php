@@ -8,7 +8,7 @@ if ($db_found) {
 $SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "'";
   $result  = mysql_query($SQL3);
 
-                               while ( $db_field = mysql_fetch_assoc($result));
+                               while ( $db_field = mysql_fetch_array($result));
                                {
                                 $episodedescription = $db_field['c01'];
                                 $episodetitle       = $db_field['c00'];
