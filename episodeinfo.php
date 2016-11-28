@@ -13,7 +13,7 @@ if ($db_found)
 {
 $SQL = "select * from tvshow_view where idshow = '" . $showid . "'";
 $SQL2 = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
-$SQL3 = "select * from episode_view where idfile = '" . $episodeid . "';
+$SQL3 = "select * from episode_view where idfile = '" . $episodeid . "'";
 $result = mysql_query($SQL);
 $result2 = mysql_query($SQL2);
 	while ($row = mysql_fetch_array($result2)) {
