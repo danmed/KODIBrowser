@@ -13,8 +13,8 @@ $result  = mysql_query($SQL3);
                                 $episodedescription = $db_field['c01'];
                                 $episodetitle       = $db_field['c00'];
                                }
-print $SQL3;
-print mysql_num_rows($result);
-print $episodedescription;
-print $episodetitle;
+print "SQL : " . $SQL3 . "<br>";
+print "ROWs : " . mysql_num_rows($result) . "<br>";
+print "DESC : " . $episodedescription . "<br>";
+print "TITLE : " . $episodetitle . "<br>";
 }
