@@ -8,10 +8,12 @@ $db_found  = mysql_select_db($database, $db_handle);
 if ($db_found) {
 $SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "'";
 
-                               $episode_info = mysql_fetch_assoc($result3); 
+                               while ( $episode_info = mysql_fetch_assoc($result3));
+                               {
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
+                               }
 print $SQL3;
-print $episode_info['c01'];
-print $episode_info['c00'];
+print $episodedescription['c01'];
+print $episodetitle['c00'];
 }
