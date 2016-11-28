@@ -21,7 +21,7 @@ if ($db_found) {
     exit;
 }
   
-                               $episode_info = mysql_fetch_row($result3))  
+                               $episode_info = mysql_fetch_row($result3); 
                                 $episodedescription = $episode_info['c01'];
                                 $episodetitle       = $episode_info['c00'];
                                 
