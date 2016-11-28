@@ -20,7 +20,7 @@ $result2 = mysql_query($SQL2);
 		$episodelist = $episodelist . "<option value='".$row['idEpisode']."'>S".$row['c12']."E".$row['c13']."-".$row['c00']."</option>";
 	}
 $result3 = mysql_query($SQL3);
-  while ($db_field3 = mysql_fetch_assoc($result3);
+  while ($db_field3 = mysql_fetch_assoc($result3));
   {
   $episodedescription = $db_field3['c01'];
   $episodetitle = $db_field3['c00'];
