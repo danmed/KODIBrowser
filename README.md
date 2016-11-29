@@ -10,9 +10,10 @@ Allows the browsing of Movies and TVShows via the Kodi MySQL database.
 * Watch trailers
 * Browse TV Shows by name or Recently Added
 * Browse individual episodes
+* Play Episodes on Desired Kodi front end.
 
 # Coming Soon :
-* Play Episodes on Desired Kodi front end.
+* Suggestions please :)
 
 # Prereqs : 
 * PHP5
