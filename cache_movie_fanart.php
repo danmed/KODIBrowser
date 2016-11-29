@@ -79,32 +79,29 @@ border:1px solid #222;
 include "config.inc.php";
 
 $db_handle = mysql_connect($server, $username, $password);
-$db_found = mysql_select_db($database, $db_handle);
+$db_found  = mysql_select_db($database, $db_handle);
 
 if ($db_found) {
-
-$SQL = "select * from movie_view Order By c00 Asc";
-$result = mysql_query($SQL);
-
-while ( $db_field = mysql_fetch_assoc($result) ) {
-
-$imdb = $db_field['uniqueid_value'];
-
-$json=file_get_contents("https://api.themoviedb.org/3/movie/" . $imdb . "?api_key=" . $apikey);
-$info=json_decode($json, TRUE);
-$fanart = $info['backdrop_path'];
-$fanart_path = "http://image.tmdb.org/t/p/original/" . $fanart;
-
-file_put_contents("fanart/" . $imdb . ".jpg", fopen($fanart_path, 'r'));
-}
-
-mysql_close($db_handle);
-
-}
-else {
-print "Database NOT Found ";
+    
+    $SQL    = "select * from movie_view Order By c00 Asc";
+    $result = mysql_query($SQL);
+    
+    while ($db_field = mysql_fetch_assoc($result)) {
+        
+        $imdb = $db_field['uniqueid_value'];
+        
+        $json        = file_get_contents("https://api.themoviedb.org/3/movie/" . $imdb . "?api_key=" . $apikey);
+        $info        = json_decode($json, TRUE);
+        $fanart      = $info['backdrop_path'];
+        $fanart_path = "http://image.tmdb.org/t/p/original/" . $fanart;
+        
+        file_put_contents("fanart/" . $imdb . ".jpg", fopen($fanart_path, 'r'));
+    }
+    
+    mysql_close($db_handle);
+    
+} else {
+    print "Database NOT Found ";
 }
 
 ?>
-
-
