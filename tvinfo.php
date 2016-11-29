@@ -109,7 +109,7 @@ background-size: cover;
 <?PHP
 print "<br><br><font face='arial' color='white'><center><table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'><tr><td colspan='2'><font face='arial' color='#0066FF' size='6'><b><A href='http://thetvdb.com/?tab=series&id=" . $imdb . "'>" . $movietitle . "</a></b></font><font face='arial' color='white'> - " . $year . "</td></tr><tr><td width='446px'>";
 new MovieTrailer(@$movietitle2, @$year2); 
-print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Channel:</b><br>" . $channel ."<br><b>Episodes:</b><br><form action='episodeinfo.php' method='get'><input type='hidden' name='show' value='".$movieid."'><select onchange='this.form.submit()' name='ep'><option value='List'>" . $episodelist . "</select></form><br><b>Rating:</b><br>" . $rating ."<br><b>IMDB Rating:</b><br>" . $imdbrating ."<br></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $moviedescription . "</td></tr><tr><td><font face='arial' color='white'><b>Tag Line:</b><br>" . $moviemoto . " </td></tr>";
+print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Channel:</b><br>" . $channel ."<br><b>Episodes:</b><br><form action='episodeinfo.php' method='get'><input type='hidden' name='show' value='".$movieid."'><select onchange='this.form.submit()' name='ep'><option value='List'>list</option>" . $episodelist . "</select></form><br><b>Rating:</b><br>" . $rating ."<br><b>IMDB Rating:</b><br>" . $imdbrating ."<br></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $moviedescription . "</td></tr><tr><td><font face='arial' color='white'><b>Tag Line:</b><br>" . $moviemoto . " </td></tr>";
 }
 mysql_close($db_handle);
 }
