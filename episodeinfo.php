@@ -13,10 +13,11 @@ $db_found  = mysql_select_db($database, $db_handle);
 if ($db_found) {
                 $SQL     = "select * from tvshow_view where idshow = '" . $showid . "'";
                 $SQL2    = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
-$SQL3    = "select c01,c00 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "' LIMIT 1";
+$SQL3    = "select c01,c00,c18 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "' LIMIT 1";
 $result  = mysql_query($SQL3);
 $episodedescription = mysql_result($result, 0, c01);
 $episodetitle = mysql_result($result,0, c00);
+$ep_location = mysql_result($result,0, c18);
                                 
             
   $result  = mysql_query($SQL);
@@ -112,7 +113,7 @@ background-size: cover;
                   $trailer = $movietitle . " - " . $episodetitle;
                                 print "<br><br><font face='arial' color='white'><center><table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'><tr><td colspan='2'><font face='arial' color='#0066FF' size='6'><b><A href='http://thetvdb.com/?tab=series&id=" . $imdb . "'>" . $movietitle . " - " . $episodetitle . "</a></b></font><font face='arial' color='white'> - " . $episodecheck . "</td></tr><tr><td width='446px'>";
                                 new MovieTrailer(@$trailer, @$year2);
-                                print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Channel:</b><br>" . $channel . "<br><b>Episodes:</b><br><form action='episodeinfo.php' method='get'><input type='hidden' name='show' value='".$showid."'><select onchange='this.form.submit()' name='ep'><option>List</option>" . $episodelist . "</select></form><br><b>Rating:</b><br>" . $rating . "<br><b>IMDB Rating:</b><br>" . $imdbrating . "<br><b>Play Show</b><br><a href='http://" . $xbmc2 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc2label . "</a> | <a href='http://" . $xbmc1 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $location . $filename . "\" } }, \"id\": 1 }'>" . $xbmc1label . "</a></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $episodedescription . "</td></tr>";
+                                print "</td><td width='300px' valign='top'><font face='arial' color='white'><b>Channel:</b><br>" . $channel . "<br><b>Episodes:</b><br><form action='episodeinfo.php' method='get'><input type='hidden' name='show' value='".$showid."'><select onchange='this.form.submit()' name='ep'><option>List</option>" . $episodelist . "</select></form><br><b>Rating:</b><br>" . $rating . "<br><b>IMDB Rating:</b><br>" . $imdbrating . "<br><b>Play Show</b><br><a href='http://" . $xbmc2 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $ep_location . "\" } }, \"id\": 1 }'>" . $xbmc2label . "</a> | <a href='http://" . $xbmc1 . "/jsonrpc?request={ \"jsonrpc\": \"2.0\", \"method\": \"Player.Open\", \"params\": { \"item\": { \"file\": \"" . $ep_location . "\" } }, \"id\": 1 }'>" . $xbmc1label . "</a></td></tr><tr><td colspan='2'><font face='arial' color='white'><b>Plot:</b><br>" . $episodedescription . "</td></tr>";
                 }
                 mysql_close($db_handle);
 } else {
