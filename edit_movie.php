@@ -17,14 +17,14 @@ if ($db_found) {
      $movie_genres = $_POST['genres'];
      $movie_director = $_POST['director'];
      $movie_studio = $_POST['studio'];
-                    $sql = "UPDATE movie SET c00 = '" . $movie_title . "', c01 = '" . $movie_synopsis . "', c03 = '" . $movie_tagline . "', c12 = '" . $movie_rating . "', c14 = '" . $movie_genres . "', c15 = '" . $movies_director . "', c18 = '" . $movie_studio . "' WHERE idmovie = '" . $idmovie . "'" ;
+                    $sql = "UPDATE movie SET c00 = '" . $movie_title . "', c01 = '" . $movie_synopsis . "', c03 = '" . $movie_tagline . "', c12 = '" . $movie_rating . "', c14 = '" . $movie_genres . "', c15 = '" . $movie_director . "', c18 = '" . $movie_studio . "' WHERE idmovie = '" . $idmovie . "'" ;
 
             $retval = mysql_query( $sql);
             
             if(! $retval ) {
                die('Could not update data: ' . mysql_error());
             }
-            echo "Updated data successfully\n";
+            echo "Updated data successfully\n" . $movie_synopsis;
     }
     else
     {
