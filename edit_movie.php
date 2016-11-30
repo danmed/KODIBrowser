@@ -25,31 +25,31 @@ if ($db_found) {
 <tbody>
 <tr>
 <td>Title</td>
-<td><input type="text" name="firstname" value="<?PHP print $movie_title; ?>"</td>
+<td><input type="text" name="title" value="<?PHP print $movie_title; ?>"></td>
 </tr>
 <tr>
 <td>Synopsis</td>
-<td>&nbsp;</td>
+<td><textarea name="synposis" rows="10" cols="30" value="<?PHP print $movie_synopsis; ?>"></td>
 </tr>
 <tr>
 <td>Tagline</td>
-<td><input type="text" name="firstname"></td>
+<td><input type="text" name="tagline" value="<?PHP print $movie_tagline; ?>"></td>
 </tr>
 <tr>
 <td>Rating</td>
-<td><input type="text" name="firstname"></td>
+<td><input type="text" name="rating" value="<?PHP print $movie_rating; ?>"></td>
 </tr>
 <tr>
 <td>Genres</td>
-<td><input type="text" name="firstname"></td>
+<td><input type="text" name="genres" value="<?PHP print $movie_genres; ?>"></td>
 </tr>
 <tr>
 <td>Director</td>
-<td><input type="text" name="firstname"></td>
+<td><input type="text" name="director" value="<?PHP print $movie_director; ?>"></td>
 </tr>
 <tr>
 <td>Studio</td>
-<td><input type="text" name="firstname"></td>
+<td><input type="text" name="studio" value="<?PHP print $movie_studio; ?>"></td>
 </tr>
 </tbody>
 </table>
