@@ -34,8 +34,6 @@ if ($db_found) {
     $SQL    = "select * from movie where idMovie = '" . $movieid . "'";
     $result = mysql_query($SQL);
      while ($db_field = mysql_fetch_assoc($result)) {
-     $idmovie = $db_field['idMovie'];
-     $idfile = $db_field['idFile'];
      $movie_title = $db_field['c00'];
      $movie_synopsis = $db_field['c01'];
      $movie_tagline  = $db_field['c03'];
@@ -47,7 +45,7 @@ if ($db_found) {
      
 ?>
 <form method="post" action="<?php $_PHP_SELF ?>">
-    <input type="hidden" name="idMovie" value="<?PHP print $movie_title; ?>">
+    <input type="hidden" name="idMovie" value="<?PHP print $movieid; ?>">
 <table>
 <tbody>
 <tr>
