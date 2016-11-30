@@ -54,9 +54,7 @@ if ($db_found) {
             file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
         }
         
-        $resolution  = explode('[', $filename);
-        $resolution1 = explode(']', $resolution[1]);
-        $finalres    = substr($resolution1[0], 5);
+
 ?>
 <head>
     <title><?PHP
