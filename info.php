@@ -50,11 +50,9 @@ if ($db_found) {
         
         while ($db_field2 = mysql_fetch_assoc($result2)) {
             $codec = $db_field2['strVideoCodec'];
+            $finalres = $db_field2['ivideowidth'];
         }
         
-        $resolution  = explode('[', $filename);
-        $resolution1 = explode(']', $resolution[1]);
-        $finalres    = substr($resolution1[0], 5);
 ?>
 <head>
 <style>
