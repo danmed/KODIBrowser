@@ -24,7 +24,7 @@ if ($db_found) {
             if(! $retval ) {
                die('Could not update data: ' . mysql_error());
             }
-            echo "Updated data successfully\n" . $movie_synopsis;
+            echo "Movie data updated successfully\n";
     }
     else
     {
