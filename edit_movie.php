@@ -58,7 +58,7 @@ if ($db_found) {
      
      
 <?PHP     
-    }
+    
     mysql_close($db_handle);
 } else {
     print "Database NOT Found ";
