@@ -17,7 +17,7 @@ if ($db_found) {
      $movie_genres = $_POST['genres'];
      $movie_director = $_POST['director'];
      $movie_studio = $_POST['studio'];
-                    $sql = "UPDATE movie SET c00 = $movie_title WHERE idmovie = $idmovie" ;
+                    $sql = "UPDATE movie SET c00 = " . $movie_title . " WHERE idmovie = " . $idmovie . "" ;
 
             $retval = mysql_query( $sql);
             
@@ -31,7 +31,7 @@ if ($db_found) {
     
     
     
-    $SQL    = "select * from movie_view where idMovie = '" . $movieid . "'";
+    $SQL    = "select * from movie where idMovie = '" . $movieid . "'";
     $result = mysql_query($SQL);
      while ($db_field = mysql_fetch_assoc($result)) {
      $idmovie = $db_field['idMovie'];
