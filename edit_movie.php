@@ -15,7 +15,7 @@ if ($db_found) {
      $movie_tagline  = $db_field['c03'];
      $movie_rating = $db_field['c12'];
      $movie_genres = $db_field['c14'];
-     $movie_director = $db_field['c14'];
+     $movie_director = $db_field['c15'];
      $movie_studio = $db_field['c18'];
      }
      
