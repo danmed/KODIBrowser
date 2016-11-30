@@ -54,7 +54,7 @@ if ($db_found) {
 </tr>
 <tr>
 <td>Synopsis</td>
-    <td><textarea name="synposis" rows="10" cols="50"><?PHP print $movie_synopsis; ?></textarea></td>
+    <td><input type="text" name="synopsis" value="<?PHP print $movie_synopsis; ?>"></td>
 </tr>
 <tr>
 <td>Tagline</td>
