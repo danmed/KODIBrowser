@@ -19,7 +19,7 @@ if ($db_found) {
      $movie_studio = $_POST['studio'];
                     $sql = "UPDATE movie SET c00 = $movie_title WHERE idmovie = $idmovie" ;
             mysql_select_db('myvideos107');
-            $retval = mysql_query( $sql, $conn );
+            $retval = mysql_query( $sql, $db_found );
             
             if(! $retval ) {
                die('Could not update data: ' . mysql_error());
