@@ -98,9 +98,12 @@ background-size: cover;
         });
     </script>
     </head>
+    
+    <br><br><font face='arial' color='white'><center>
 <form method="post" action="<?php $_PHP_SELF ?>">
     <input type="hidden" name="idMovie" value="<?PHP print $movieid; ?>">
-<table>
+    
+<table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'>
 <tbody>
 <tr>
 <td>Title</td>
