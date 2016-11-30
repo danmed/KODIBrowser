@@ -47,7 +47,7 @@ if ($db_found) {
      
 ?>
 <form method="post" action="<?php $_PHP_SELF ?>">
-    <input type="hidden" name="idMovie" value="<?PHP print $idMovie; ?>">
+    <input type="hidden" name="idMovie" value="<?PHP print $idFile; ?>">
 <table>
 <tbody>
 <tr>
