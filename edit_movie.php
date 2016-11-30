@@ -106,31 +106,31 @@ background-size: cover;
 <table class='alpha60' border='0' width='750px' cellspacing='3' cellpadding='2' bgcolor='black'>
 <tbody>
 <tr>
-<td>Title</td>
+<td><font face='arial' color='#0066FF' size='6'>Title</td>
 <td><input type="text" name="title" value="<?PHP print $movie_title; ?>"></td>
 </tr>
 <tr>
-<td>Synopsis</td>
+<td><font face='arial' color='#0066FF' size='6'>Synopsis</td>
     <td><input type="text" name="synopsis" value="<?PHP print $movie_synopsis; ?>"></td>
 </tr>
 <tr>
-<td>Tagline</td>
+<td><font face='arial' color='#0066FF' size='6'>Tagline</td>
 <td><input type="text" name="tagline" value="<?PHP print $movie_tagline; ?>"></td>
 </tr>
 <tr>
-<td>Rating</td>
+<td><font face='arial' color='#0066FF' size='6'>Rating</td>
 <td><input type="text" name="rating" value="<?PHP print $movie_rating; ?>"></td>
 </tr>
 <tr>
-<td>Genres</td>
+<td><font face='arial' color='#0066FF' size='6'>Genres</td>
 <td><input type="text" name="genres" value="<?PHP print $movie_genres; ?>"></td>
 </tr>
 <tr>
-<td>Director</td>
+<td><font face='arial' color='#0066FF' size='6'>Director</td>
 <td><input type="text" name="director" value="<?PHP print $movie_director; ?>"></td>
 </tr>
 <tr>
-<td>Studio</td>
+<td><font face='arial' color='#0066FF' size='6'>Studio</td>
 <td><input type="text" name="studio" value="<?PHP print $movie_studio; ?>"></td>
 </tr>
 </tbody>
