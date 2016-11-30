@@ -25,6 +25,8 @@ if ($db_found) {
                die('Could not update data: ' . mysql_error());
             }
             echo "Movie data updated successfully\n";
+        header('Location: info.php?search=' . $idmovie);
+exit();
     }
     else
     {
