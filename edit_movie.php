@@ -44,6 +44,60 @@ if ($db_found) {
      }
      
 ?>
+    <head>
+<style>
+.alpha60 {
+/* Fallback for web browsers that doesn't support RGBa */
+background: rgb(0, 0, 0);
+/* RGBa with 0.6 opacity */
+background: rgba(0, 0, 0, 0.6);
+}
+table
+{
+border:2px solid;
+border-radius:25px;
+-moz-border-radius:25px; /* Old Firefox */
+}
+a:link{color:white}
+a:visited{color:white}
+a:link{text-decoration:none}
+
+{ margin: 0; padding: 0; }
+
+html {
+background: url('<?PHP
+        print $fanart_path;
+?>') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+} 
+
+</style>
+ 
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox-1.2.6.css" media="screen" />
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox-1.2.6.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.zoom").fancybox();
+
+            $("a.zoom1").fancybox({
+                'overlayOpacity'    :    0.7,
+                'overlayColor'        :    '#000'
+            });
+
+            $("a.zoom2").fancybox({
+                'zoomSpeedIn'        :    500,
+                'zoomSpeedOut'        :    500
+            });
+        });
+    </script>
+    </head>
 <form method="post" action="<?php $_PHP_SELF ?>">
     <input type="hidden" name="idMovie" value="<?PHP print $movieid; ?>">
 <table>
