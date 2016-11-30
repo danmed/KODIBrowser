@@ -5,6 +5,32 @@ $movieid = $_GET["search"];
 $db_handle = mysql_connect($server, $username, $password);
 $db_found  = mysql_select_db($database, $db_handle);
 if ($db_found) {
+    
+    if(isset($_POST['update'])) {
+        
+     $idmovie = $_POST['idMovie'];
+     $idfile = $_POST['idFile'];
+     $movie_title = $_POST['title'];
+     $movie_synopsis = $_POST['synopsis'];
+     $movie_tagline  = $_POST['tagline'];
+     $movie_rating = $_POST['rating'];
+     $movie_genres = $_POST['genres'];
+     $movie_director = $_POST['director'];
+     $movie_studio = $_POST['studio'];
+                    $sql = "UPDATE movie SET c00 = $movie_title WHERE idmovie = $idmovie" ;
+            mysql_select_db('test_db');
+            $retval = mysql_query( $sql, $conn );
+            
+            if(! $retval ) {
+               die('Could not update data: ' . mysql_error());
+            }
+            echo "Updated data successfully\n";
+    }
+    else
+    {
+    
+    
+    
     $SQL    = "select * from movie_view where idMovie = '" . $movieid . "'";
     $result = mysql_query($SQL);
      while ($db_field = mysql_fetch_assoc($result)) {
@@ -20,7 +46,8 @@ if ($db_found) {
      }
      
 ?>
-<form>
+<form method="post" action="<?php $_PHP_SELF ?>">
+    <input type="hidden" name="idMovie" value="<?PHP print $idMovie; ?>">
 <table>
 <tbody>
 <tr>
@@ -53,12 +80,14 @@ if ($db_found) {
 </tr>
 </tbody>
 </table>
-     
+                           <input name = "update" type = "submit" 
+                              id = "update" value = "Update">
+    </form>
      
      
      
 <?PHP     
-    
+    }
     mysql_close($db_handle);
 } else {
     print "Database NOT Found ";
