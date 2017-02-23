@@ -50,7 +50,7 @@ if ($db_found) {
         
         while ($db_field2 = mysql_fetch_assoc($result2)) {
             $codec = $db_field2['strVideoCodec'];
-            $finalres = $db_field2['iVideoHeight'];
+            $finalres = $db_field2['iVideoWidth']."x".$db_field2['iVideoHeight'];
             $length = ($db_field2['iVideoDuration'] / 60) . " minutes";
         }
         
