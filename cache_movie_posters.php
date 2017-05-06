@@ -79,7 +79,7 @@ border:1px solid #222;
 include "config.inc.php";
 
 $db_handle = mysqli_connect($server, $username, $password);
-$db_found = mysqli_select_db($database, $db_handle);
+$db_found = mysqli_select_db($db_handle, $database);
 
 if ($db_found) {
 
