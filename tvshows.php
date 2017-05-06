@@ -19,16 +19,16 @@
 include "config.inc.php";
 $searchstring = $_GET["search"];
 $tag          = $_GET["tag"];
-$db_handle    = mysql_connect($server, $username, $password);
-$db_found     = mysql_select_db($database, $db_handle);
+$db_handle    = mysqli_connect($server, $username, $password);
+$db_found     = mysqli_select_db($db_handle, $database);
 if ($db_found) {
     If ($tag == "search") {
         $SQL = "select * from tvshow_view where c00 like '%" . $searchstring . "%' ORDER BY RAND() LIMIT 30";
     } else {
         $SQL = "select * from tvshow_view ORDER BY DateAdded desc LIMIT 30";
     }
-    $result = mysql_query($SQL);
-    while ($db_field = mysql_fetch_assoc($result)) {
+    $result = mysqli_query($db_handle, $SQL);
+    while ($db_field = mysqli_fetch_assoc($result)) {
         $imdb  = $db_field['uniqueid_value'];
         $title = $db_field['c00'];
         if (empty($imdb)) {
@@ -47,7 +47,7 @@ if ($db_found) {
         }
         print "<a href='tvinfo.php?search=" . $db_field['idShow'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb . "'/></a>";
     }
-    mysql_close($db_handle);
+    mysqli_close($db_handle);
 } else {
     print "Database NOT Found ";
 }
