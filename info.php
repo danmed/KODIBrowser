@@ -10,14 +10,14 @@ function left($str, $length)
 }
 $movieid = $_GET["search"];
 
-$db_handle = mysql_connect($server, $username, $password);
-$db_found  = mysql_select_db($database, $db_handle);
+$db_handle = mysqli_connect($server, $username, $password);
+$db_found  = mysqli_select_db($db_handle, $database);
 
 if ($db_found) {
     $SQL    = "select * from movie_view where idMovie = '" . $movieid . "'";
-    $result = mysql_query($SQL);
+    $result = mysqli_query($db_handle, $SQL);
     
-    while ($db_field = mysql_fetch_assoc($result)) {
+    while ($db_field = mysqli_fetch_assoc($result)) {
         $idfile           = $db_field['idFile'];
         $movietitle       = $db_field['c00'];
         $movietitle2      = "'" . $db_field['c00'] . "'";
@@ -46,9 +46,9 @@ if ($db_found) {
         }
         
         $SQL2    = "select * from streamdetails where idFile = '" . $idfile . "' AND iStreamType = '0'";
-        $result2 = mysql_query($SQL2);
+        $result2 = mysqli_query($db_handle, $SQL2);
         
-        while ($db_field2 = mysql_fetch_assoc($result2)) {
+        while ($db_field2 = mysqli_fetch_assoc($result2)) {
             $codec = $db_field2['strVideoCodec'];
             $finalres = $db_field2['iVideoWidth']."x".$db_field2['iVideoHeight'];
             $length = round(($db_field2['iVideoDuration'] / 60)) . " minutes";
@@ -119,7 +119,7 @@ background-size: cover;
         
         
     }
-    mysql_close($db_handle);
+    mysqli_close($db_handle);
 } else {
     print "Database NOT Found ";
 }
