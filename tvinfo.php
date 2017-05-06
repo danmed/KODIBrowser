@@ -7,20 +7,20 @@ function left($str, $length)
     return substr($str, 0, $length);
 }
 $movieid   = $_GET["search"];
-$db_handle = mysql_connect($server, $username, $password);
-$db_found  = mysql_select_db($database, $db_handle);
+$db_handle = mysqli_connect($server, $username, $password);
+$db_found  = mysqli_select_db($database, $db_handle);
 if ($db_found) {
     $SQL     = "select * from tvshow_view where idshow = '" . $movieid . "'";
     $SQL2    = "select * from episode_view where idshow = '" . $movieid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
-    $result  = mysql_query($SQL);
-    $result2 = mysql_query($SQL2);
-    while ($row = mysql_fetch_array($result2)) {
+    $result  = mysqli_query($db_handle, $SQL);
+    $result2 = mysqli_query($db_handle, $SQL2);
+    while ($row = mysqli_fetch_array($result2)) {
         $episodelist = $episodelist . "<option id='ep' value='" . $row['idEpisode'] . "'>S" . $row['c12'] . "E" . $row['c13'] . "-" . $row['c00'] . "</option>";
         $ep_location = $row['strPath'] . $row['strFilename'];
     }
     
-    $episode_count = mysql_num_rows($result2);
-    while ($db_field = mysql_fetch_assoc($result)) {
+    $episode_count = mysqli_num_rows($result2);
+    while ($db_field = mysqli_fetch_assoc($db_handle, $result)) {
         $idfile           = $db_field['idFile'];
         $movietitle       = $db_field['c00'];
         $movietitle2      = "'" . $db_field['c00'] . "'";
@@ -45,8 +45,8 @@ if ($db_found) {
             file_put_contents("fanart/" . $imdb . "-1.jpg", fopen($fanart_path, 'r'));
         }
         $SQL2    = "select * from streamdetails where idFile = '" . $idfile . "' AND iStreamType = '0'";
-        $result2 = mysql_query($SQL2);
-        while ($db_field2 = mysql_fetch_assoc($result2)) {
+        $result2 = mysqli_query($db_handle, $SQL2);
+        while ($db_field2 = mysqli_fetch_assoc($result2)) {
             $codec = $db_field2['strVideoCodec'];
         }
         
