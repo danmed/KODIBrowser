@@ -78,15 +78,15 @@ border:1px solid #222;
 
 include "config.inc.php";
 
-$db_handle = mysql_connect($server, $username, $password);
-$db_found = mysql_select_db($database, $db_handle);
+$db_handle = mysqli_connect($server, $username, $password);
+$db_found = mysqli_select_db($database, $db_handle);
 
 if ($db_found) {
 
 $SQL = "select * from movie_view Order By c00 Asc";
-$result = mysql_query($SQL);
+$result = mysqli_query($db_handle, $SQL);
 
-while ( $db_field = mysql_fetch_assoc($result) ) {
+while ( $db_field = mysqli_fetch_assoc($result) ) {
 
 $imdb = $db_field['uniqueid_value'];
 
@@ -98,7 +98,7 @@ $poster_path = "http://image.tmdb.org/t/p/w92/" . $poster;
 file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
 }
 
-mysql_close($db_handle);
+mysqli_close($db_handle);
 
 }
 else {
