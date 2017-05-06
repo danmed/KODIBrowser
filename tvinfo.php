@@ -20,7 +20,7 @@ if ($db_found) {
     }
     
     $episode_count = mysqli_num_rows($result2);
-    while ($db_field = mysqli_fetch_assoc($db_handle, $result)) {
+    while ($db_field = mysqli_fetch_assoc($result)) {
         $idfile           = $db_field['idFile'];
         $movietitle       = $db_field['c00'];
         $movietitle2      = "'" . $db_field['c00'] . "'";
