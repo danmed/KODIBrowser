@@ -8,28 +8,28 @@ function left($str, $length)
 }
 $showid    = $_GET["show"];
 $episodeid = $_GET["ep"];
-$db_handle = mysql_connect($server, $username, $password);
-$db_found  = mysql_select_db($database, $db_handle);
+$db_handle = mysqli_connect($server, $username, $password);
+$db_found  = mysqli_select_db($db_handle, $database);
 if ($db_found) {
     $SQL                = "select * from tvshow_view where idshow = '" . $showid . "'";
     $SQL2               = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
     $SQL3               = "select c01,c00,c18 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "' LIMIT 1";
-    $result             = mysql_query($SQL3);
-    $episodedescription = mysql_result($result, 0, c01);
-    $episodetitle       = mysql_result($result, 0, c00);
-    $ep_location        = mysql_result($result, 0, c18);
+    $result             = mysqli_query($db_handle, $SQL3);
+    $episodedescription = mysqli_result($result, 0, c01);
+    $episodetitle       = mysqli_result($result, 0, c00);
+    $ep_location        = mysqli_result($result, 0, c18);
     
     
-    $result  = mysql_query($SQL);
-    $result2 = mysql_query($SQL2);
-    while ($row = mysql_fetch_array($result2)) {
+    $result  = mysqli_query($db_handle, $SQL);
+    $result2 = mysqli_query($db_handle, $SQL2);
+    while ($row = mysqli_fetch_array($result2)) {
         $episodelist = $episodelist . "<option id='ep' value='" . $row['idEpisode'] . "'>S" . $row['c12'] . "E" . $row['c13'] . "-" . $row['c00'] . "</option>";
         $ep_file     = $row['strFilename'];
     }
     
     
     
-    while ($db_field = mysql_fetch_assoc($result)) {
+    while ($db_field = mysqli_fetch_assoc($result)) {
         $idfile           = $db_field['idFile'];
         $movietitle       = $db_field['c00'];
         $movietitle2      = "'" . $db_field['c00'] . "'";
