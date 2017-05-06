@@ -14,7 +14,7 @@ if ($db_found) {
     $SQL2    = "select * from episode_view where idshow = '" . $movieid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
     $result  = mysqli_query($db_handle, $SQL);
     $result2 = mysqli_query($db_handle, $SQL2);
-    while ($row = mysqli_fetch_array($result2)) {
+    while ($row = mysqli_free_result($result2)) {
         $episodelist = $episodelist . "<option id='ep' value='" . $row['idEpisode'] . "'>S" . $row['c12'] . "E" . $row['c13'] . "-" . $row['c00'] . "</option>";
         $ep_location = $row['strPath'] . $row['strFilename'];
     }
