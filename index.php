@@ -20,7 +20,7 @@ include "config.inc.php";
 $searchstring = $_GET["search"];
 $tag          = $_GET["tag"];
 $db_handle    = mysqli_connect($server, $username, $password);
-$db_found     = mysqli_select_db($database, $db_handle);
+$db_found     = mysqli_select_db($db_handle, $database);
 
 if ($db_found) {
     If ($tag == "genre") {
