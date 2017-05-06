@@ -36,7 +36,7 @@ if ($db_found) {
         $SQL = "select * from movie_view ORDER BY DateAdded desc LIMIT 30";
     }
     
-    $result = mysqli_query($SQL);
+    $result = mysqli_query($db_handle, $SQL);
     
     while ($db_field = mysqli_fetch_assoc($result)) {
         
