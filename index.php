@@ -19,8 +19,8 @@
 include "config.inc.php";
 $searchstring = $_GET["search"];
 $tag          = $_GET["tag"];
-$db_handle    = mysql_connect($server, $username, $password);
-$db_found     = mysql_select_db($database, $db_handle);
+$db_handle    = mysqli_connect($server, $username, $password);
+$db_found     = mysqli_select_db($database, $db_handle);
 
 if ($db_found) {
     If ($tag == "genre") {
@@ -36,9 +36,9 @@ if ($db_found) {
         $SQL = "select * from movie_view ORDER BY DateAdded desc LIMIT 30";
     }
     
-    $result = mysql_query($SQL);
+    $result = mysqli_query($SQL);
     
-    while ($db_field = mysql_fetch_assoc($result)) {
+    while ($db_field = mysqli_fetch_assoc($result)) {
         
         $imdb  = $db_field['uniqueid_value'];
         $title = $db_field['c00'];
@@ -60,7 +60,7 @@ if ($db_found) {
         
     }
     
-    mysql_close($db_handle);
+    mysqli_close($db_handle);
     
 } else {
     print "Database NOT Found ";
