@@ -75,18 +75,18 @@ border:1px solid #222;
     error_reporting(E_ALL);
 ini_set('display_errors', '1');
 include "config.inc.php";
-$db_handle = mysql_connect($server, $username, $password);
-$db_found = mysql_select_db($database, $db_handle);
+$db_handle = mysqli_connect($server, $username, $password);
+$db_found = mysqli_select_db($db_handle, $database);
 if ($db_found) {
 $SQL = "select * from tvshow_view Order By c00 Asc";
-$result = mysql_query($SQL);
-while ( $db_field = mysql_fetch_assoc($result) ) {
+$result = mysqli_query($db_handle, $SQL);
+while ( $db_field = mysqli_fetch_assoc($result) ) {
 $imdb = $db_field['uniqueid_value'];
 $poster = "http://www.thetvdb.com.rsz.io/banners/posters/" . $imdb . "-1.jpg?width=90";
 $poster_path = "posters/" . $imdb . "-3.jpg";
 file_put_contents($poster_path, fopen($poster, 'r'));
 }
-mysql_close($db_handle);
+mysqli_close($db_handle);
 }
 else {
 print "Database NOT Found ";
