@@ -8,7 +8,7 @@ function left($str, $length)
 }
 $movieid   = $_GET["search"];
 $db_handle = mysqli_connect($server, $username, $password);
-$db_found  = mysqli_select_db($database, $db_handle);
+$db_found  = mysqli_select_db($db_handle);
 if ($db_found) {
     $SQL     = "select * from tvshow_view where idshow = '" . $movieid . "'";
     $SQL2    = "select * from episode_view where idshow = '" . $movieid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
