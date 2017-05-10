@@ -2,8 +2,8 @@
 <?PHP
 include "config.inc.php";
 $movieid = $_GET["search"];
-$db_handle = mysql_connect($server, $username, $password);
-$db_found  = mysql_select_db($database, $db_handle);
+$db_handle = mysqli_connect($server, $username, $password);
+$db_found  = mysqli_select_db($dbhandle, $database);
 if ($db_found) {
     
     if(isset($_POST['update'])) {
@@ -19,7 +19,7 @@ if ($db_found) {
      $movie_studio = mysql_real_escape_string($_POST['studio']);
                     $sql = "UPDATE movie SET c00 = '" . $movie_title . "', c01 = '" . $movie_synopsis . "', c03 = '" . $movie_tagline . "', c12 = '" . $movie_rating . "', c14 = '" . $movie_genres . "', c15 = '" . $movie_director . "', c18 = '" . $movie_studio . "' WHERE idmovie = '" . $idmovie . "'" ;
 
-            $retval = mysql_query( $sql);
+            $retval = mysqli_query($sql);
             
             if(! $retval ) {
                die('Could not update data: ' . mysql_error());
@@ -34,7 +34,7 @@ exit();
     
     
     $SQL    = "select * from movie where idMovie = '" . $movieid . "'";
-    $result = mysql_query($SQL);
+    $result = mysqli_query($SQL);
      while ($db_field = mysql_fetch_assoc($result)) {
      $movie_title = $db_field['c00'];
      $movie_synopsis = $db_field['c01'];
