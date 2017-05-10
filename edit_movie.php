@@ -3,7 +3,7 @@
 include "config.inc.php";
 $movieid = $_GET["search"];
 $db_handle = mysqli_connect($server, $username, $password);
-$db_found  = mysqli_select_db($dbhandle, $database);
+$db_found  = mysqli_select_db($db_handle, $database);
 if ($db_found) {
     
     if(isset($_POST['update'])) {
