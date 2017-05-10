@@ -15,10 +15,11 @@ if ($db_found) {
     $SQL2               = "select * from episode_view where idshow = '" . $showid . "' ORDER BY CAST(c12 AS UNSIGNED INTEGER), CAST(c13 AS UNSIGNED INTEGER)";
     $SQL3               = "select c01,c00,c18 from episode where idepisode = '" . $episodeid . "' AND idshow = '" . $showid . "' LIMIT 1";
     $result             = mysqli_query($db_handle, $SQL3);
-    $episodedescription = mysqli_result($result, 0, c01);
-    $episodetitle       = mysqli_result($result, 0, c00);
-    $ep_location        = mysqli_result($result, 0, c18);
-    
+    while ($db_field = mysqli_fetch_assoc($result)) {
+    $episodedescription = $db_field['c01'];
+    $episodetitle       = $db_field['c00'];
+    $ep_location        = $db_field['c18'];
+    }
     
     $result  = mysqli_query($db_handle, $SQL);
     $result2 = mysqli_query($db_handle, $SQL2);
