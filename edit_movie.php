@@ -34,7 +34,7 @@ exit();
     
     
     $SQL    = "select * from movie where idMovie = '" . $movieid . "'";
-    $result = mysqli_query($SQL);
+    $result = mysqli_query($db_handle, $SQL);
      while ($db_field = mysqli_fetch_assoc($result)) {
      $movie_title = $db_field['c00'];
      $movie_synopsis = $db_field['c01'];
