@@ -8,15 +8,15 @@ if ($db_found) {
     
     if(isset($_POST['update'])) {
         
-     $idmovie = mysqli_real_escape_string($db_handle, $_POST['idMovie']);
-     $idfile = mysqli_real_escape_string($db_handle, $_POST['idFile']);
-     $movie_title = mysqli_real_escape_string($db_handle, $_POST['title']);
-     $movie_synopsis = mysqli_real_escape_string($db_handle, $_POST['synopsis']);
-     $movie_tagline  = mysqli_real_escape_string($db_handle, $_POST['tagline']);
-     $movie_rating = mysqli_real_escape_string($db_handle, $_POST['rating']);
-     $movie_genres = mysqli_real_escape_string($db_handle, $_POST['genres']);
-     $movie_director = mysqli_real_escape_string($db_handle, $_POST['director']);
-     $movie_studio = mysqli_real_escape_string($db_handle, $_POST['studio']);
+     $idmovie = mysqli_real_escape_string($_POST['idMovie']);
+     $idfile = mysqli_real_escape_string($_POST['idFile']);
+     $movie_title = mysqli_real_escape_string($_POST['title']);
+     $movie_synopsis = mysqli_real_escape_string($_POST['synopsis']);
+     $movie_tagline  = mysqli_real_escape_string($_POST['tagline']);
+     $movie_rating = mysqli_real_escape_string($_POST['rating']);
+     $movie_genres = mysqli_real_escape_string($_POST['genres']);
+     $movie_director = mysqli_real_escape_string($_POST['director']);
+     $movie_studio = mysqli_real_escape_string($_POST['studio']);
                     $sql = "UPDATE movie SET c00 = '" . $movie_title . "', c01 = '" . $movie_synopsis . "', c03 = '" . $movie_tagline . "', c12 = '" . $movie_rating . "', c14 = '" . $movie_genres . "', c15 = '" . $movie_director . "', c18 = '" . $movie_studio . "' WHERE idmovie = '" . $idmovie . "'" ;
 
             $retval = mysqli_query($sql);
