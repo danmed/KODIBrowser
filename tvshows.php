@@ -37,7 +37,7 @@ if ($db_found) {
             if (file_exists("posters/" . $imdb . "-3.jpg") && filesize("posters/" . $imdb . "-3.jpg") > 0) {
                 $poster_path = "posters/" . $imdb . "-3.jpg";
             } Else {
-                $poster      = "http://www.thetvdb.com.rsz.io/banners/posters/" . $imdb . "-2.jpg?width=90";
+                $poster      = "http://www.thetvdb.com/banners/posters/" . $imdb . "-2.jpg?width=90";
                 $poster_path = "posters/" . $imdb . "-3.jpg";
                 file_put_contents($poster_path, fopen($poster, 'r'));
                 If (filesize("posters/" . $imdb . "-3.jpg") < 1) {
