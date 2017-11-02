@@ -40,7 +40,7 @@ if ($db_found) {
                 $poster      = "http://www.thetvdb.com/banners/posters/" . $imdb . "-2.jpg?width=90";
                 $poster_path = "posters/" . $imdb . "-3.jpg";
                 file_put_contents($poster_path, fopen($poster, 'r'));
-                $img = resize_image(‘" . $poster_path . "’, 90, 132);
+                $img = resize_image($poster_path, 90, 132);
                 If (filesize("posters/" . $imdb . "-3.jpg") < 1) {
                     $poster_path = "posters/blank.jpg";
                 }
