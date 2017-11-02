@@ -40,6 +40,7 @@ if ($db_found) {
                 $poster      = "http://www.thetvdb.com/banners/posters/" . $imdb . "-2.jpg?width=90";
                 $poster_path = "posters/" . $imdb . "-3.jpg";
                 file_put_contents($poster_path, fopen($poster, 'r'));
+                $img = resize_image(‘" . $poster_path . "’, 90, 132);
                 If (filesize("posters/" . $imdb . "-3.jpg") < 1) {
                     $poster_path = "posters/blank.jpg";
                 }
@@ -59,6 +60,32 @@ if ($db_found) {
     </div>
 </div>
 <?PHP
+function resize_image($file, $w, $h, $crop=FALSE) {
+    list($width, $height) = getimagesize($file);
+    $r = $width / $height;
+    if ($crop) {
+        if ($width > $height) {
+            $width = ceil($width-($width*abs($r-$w/$h)));
+        } else {
+            $height = ceil($height-($height*abs($r-$w/$h)));
+        }
+        $newwidth = $w;
+        $newheight = $h;
+    } else {
+        if ($w/$h > $r) {
+            $newwidth = $h*$r;
+            $newheight = $h;
+        } else {
+            $newheight = $w/$r;
+            $newwidth = $w;
+        }
+    }
+    $src = imagecreatefromjpeg($file);
+    $dst = imagecreatetruecolor($newwidth, $newheight);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+    return $dst;
+}
 include "tvmenu.php";
 ?>
 </body>
