@@ -17,6 +17,7 @@ Allows the browsing of Movies and TVShows via the Kodi MySQL database.
 
 # Prereqs : 
 * PHP5 / 7
+** PHP-GD Module
 * MySQL
 * For Krypton (DB Version 107) MySQL installs ONLY!
 
