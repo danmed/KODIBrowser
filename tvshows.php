@@ -43,6 +43,7 @@ if ($db_found) {
                 $poster_path = "posters/" . $imdb . "-3.jpg";
                 file_put_contents($full_poster_path, fopen($poster, 'r'));
                 smart_resize_image($full_poster_path , null, 90 , 132 , false , $poster_path , false , false ,100 );
+                unlink($full_poster_path);
                 If (filesize("posters/" . $imdb . "-3.jpg") < 1) {
                     $poster_path = "posters/blank.jpg";
                 }
