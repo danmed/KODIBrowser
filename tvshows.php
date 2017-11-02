@@ -17,6 +17,7 @@
 </font><br><br>
 <?PHP
 include "config.inc.php";
+    include "smart_resize_image.function.php";
 $searchstring = $_GET["search"];
 $tag          = $_GET["tag"];
 $db_handle    = mysqli_connect($server, $username, $password);
@@ -37,10 +38,11 @@ if ($db_found) {
             if (file_exists("posters/" . $imdb . "-3.jpg") && filesize("posters/" . $imdb . "-3.jpg") > 0) {
                 $poster_path = "posters/" . $imdb . "-3.jpg";
             } Else {
-                $poster      = "http://www.thetvdb.com/banners/posters/" . $imdb . "-2.jpg?width=90";
+                $poster      = "http://www.thetvdb.com/banners/posters/" . $imdb . "-2.jpg";
+                $full_poster_path = "posters/" . $imdb . "-full.jpg";
                 $poster_path = "posters/" . $imdb . "-3.jpg";
-                file_put_contents($poster_path, fopen($poster, 'r'));
-                $img = resize_image($poster_path, 90, 132);
+                file_put_contents($full_poster_path, fopen($poster, 'r'));
+                smart_resize_image($full_poster_path , null, 90 , 132 , false , $resizedFile , false , false ,100 );
                 If (filesize("posters/" . $imdb . "-3.jpg") < 1) {
                     $poster_path = "posters/blank.jpg";
                 }
@@ -60,32 +62,6 @@ if ($db_found) {
     </div>
 </div>
 <?PHP
-function resize_image($file, $w, $h, $crop=FALSE) {
-    list($width, $height) = getimagesize($file);
-    $r = $width / $height;
-    if ($crop) {
-        if ($width > $height) {
-            $width = ceil($width-($width*abs($r-$w/$h)));
-        } else {
-            $height = ceil($height-($height*abs($r-$w/$h)));
-        }
-        $newwidth = $w;
-        $newheight = $h;
-    } else {
-        if ($w/$h > $r) {
-            $newwidth = $h*$r;
-            $newheight = $h;
-        } else {
-            $newheight = $w/$r;
-            $newwidth = $w;
-        }
-    }
-    $src = imagecreatefromjpeg($file);
-    $dst = imagecreatetruecolor($newwidth, $newheight);
-    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-
-    return $dst;
-}
 include "tvmenu.php";
 ?>
 </body>
