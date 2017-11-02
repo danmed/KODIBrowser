@@ -45,7 +45,7 @@ if ($db_found) {
                 }
             }
         }
-        print "<a href='tvinfo.php?search=" . $db_field['idShow'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb . "'/></a>";
+        print "<a href='tvinfo.php?search=" . $db_field['idShow'] . "'><img class='content' src='" . $poster_path . "' width=90px alt='" . $title . " - " . $imdb . "'/></a>";
     }
     mysqli_close($db_handle);
 } else {
