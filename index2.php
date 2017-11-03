@@ -93,7 +93,7 @@ if ($db_found) {
                 file_put_contents("posters/" . $imdb . ".jpg", fopen($poster_path, 'r'));
             }
         }
-        print "<a href='info.php?search=" . $db_field['idMovie'] . "'><img class='content' src='" . $poster_path . "' alt='" . $title . " - " . $imdb . "'/></a>";
+        print "<div class='card'><img data-src='" . $poster_path . "' alt='" . $title . "'></div>";
         
     }
     
