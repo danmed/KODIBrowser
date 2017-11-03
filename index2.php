@@ -47,15 +47,15 @@ $(document).ready(function() {
     </head>
 
   <body>
-<div class="album text-muted">
-        <div class="container">
-
-          <div class="row">
-            <div class="card">
     <?PHP
 include "navbar.php";
 ?>
 <center>
+  <div class="album text-muted">
+        <div class="container">
+
+          <div class="row">
+            <div class="card">
 <?PHP
 include "config.inc.php";
 $searchstring = $_GET["search"];
