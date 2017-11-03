@@ -110,8 +110,5 @@ if ($db_found) {
 
     </div>
 </div>
-<?PHP
-include "menu.php";
-?>
 </body>
 </html>
