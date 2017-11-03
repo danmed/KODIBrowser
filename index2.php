@@ -47,7 +47,11 @@ $(document).ready(function() {
     </head>
 
   <body>
+<div class="album text-muted">
+        <div class="container">
 
+          <div class="row">
+            <div class="card">
     <?PHP
 include "navbar.php";
 ?>
@@ -106,7 +110,8 @@ if ($db_found) {
 ?>
            
 
-        
+      </div>
+          </div>    
 
     </div>
 </div>
